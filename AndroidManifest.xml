@@ -1,0 +1,234 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.htjs.mobile.nyoa"
+    android:versionCode="1"
+    android:versionName="1.7" 
+    >
+
+    
+ 	<uses-sdk
+        android:maxSdkVersion="13"
+        android:minSdkVersion="7"
+        android:targetSdkVersion="10" />
+
+ 	<uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- 开关APN的权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+	<!-- 在SDCard中创建与删除文件权限 -->
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<!-- 往SDCard写入数据权限 -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- 检查网络设备的权限 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> 
+	<!-- 操作WIFI的权限 -->
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission> 
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission> 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission> 
+    <!-- 读取sim卡的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<!-- 获取手机信息 -->
+	<uses-permission android:name="READ_PHONE_STATE" /> 
+    <application
+        android:icon="@drawable/logonyoa"
+       	android:label="@string/app_name"
+        android:theme="@style/fornormal" 
+		android:debuggable="true"
+		>
+        <activity
+            android:name=".Main"
+            android:theme="@style/normalText" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+       	<activity
+            android:name=".MainA"
+            android:theme="@style/normalText" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListViewMain"
+            android:theme="@style/normalText"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/normalText" 
+            android:permission="android.permission.INTERNET" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivityA"
+            android:theme="@style/normalText" 
+            android:permission="android.permission.INTERNET" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TabMainActivity"
+            android:theme="@style/normalText" 
+            android:permission="android.permission.INTERNET" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".nineActivity"
+            android:theme="@style/normalText" 
+            android:permission="android.permission.INTERNET" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".gw.WebView4TabMain"
+            android:theme="@style/normalText"
+            android:permission="android.permission.INTERNET" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+				
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".gw.ListGwWebView"
+            android:theme="@style/normalText" >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+      <!--   <receiver android:name=".NetReceiver">  
+            <intent-filter>  
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>  
+            </intent-filter>  
+        </receiver>  --> 
+        
+     <!--
+         <activity
+            android:name="xink.vpn.VpnSettings"
+            android:label="@string/task_main"
+           
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.net.vpn.SETTINGS" >
+                </action>
+
+                <category android:name="com.android.settings.SHORTCUT" >
+                </category>
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="xink.vpn.VpnAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="vpn.connectivity" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" >
+                </action>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/vpn_appwidget_info" >
+            </meta-data>
+        </receiver>
+
+        <activity
+            android:name="xink.vpn.VpnTypeSelection"
+            android:label="@string/add_vpn" >
+        </activity>
+        <activity
+            android:name="xink.vpn.editor.PptpProfileEditor"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="xink.vpn.editor.L2tpProfileEditor"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="xink.vpn.editor.L2tpIpsecPskProfileEditor"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="xink.vpn.ToggleVpn"
+            android:icon="@drawable/vpn_switch"
+            android:label="@string/task_toggle"
+            android:launchMode="singleInstance"
+            android:taskAffinity="xink.vpn.toggle"
+            android:theme="@style/HiddenActivity" >
+        </activity>
+
+        <receiver android:name="xink.vpn.KeepAlive" >
+            <intent-filter>
+                <action android:name="vpn.connectivity" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="xink.vpn.Settings" >
+        </activity>
+
+        <receiver android:name="xink.vpn.stats.VpnConnectivityMonitor" >
+            <intent-filter>
+                <action android:name="vpn.connectivity" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="org.acra.CrashReportDialog"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" />
+        
+        
+        
+         -->
+        
+        <!-- APN界面 -->
+        
+           <activity
+            android:label="@string/app_name"
+            android:name="com.apn.activity.MainActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.ONCLICK" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtVpnType"
+        style="@style/VpnTypeNameStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dip"
+        android:text="VPN Type" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/txtVpnTypeDesc"
+        style="@style/VpnTypeDescStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dip"
+        android:text="VPN Type Description" >
+    </TextView>
+
+</LinearLayout>
