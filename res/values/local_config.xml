@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- This file must *NOT* be checked in Version Control Systems -->
-<resources>
-    <!-- 16 bytes raw key (AES-128) used by StreamCrypto -->
-    <string name="crypto_raw_key">aaaaaaaaaaaaaaaa</string>
-</resources>
